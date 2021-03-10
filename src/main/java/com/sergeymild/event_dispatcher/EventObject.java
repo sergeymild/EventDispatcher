@@ -66,8 +66,8 @@ class EventObject {
 
     private void invokeMethod(MethodInfo methodInfo, Object o, Object[] args) {
         try {
-            methodInfo.method.invoke(o, args);
             Logger.log("                -invokeMethod: "+o.getClass().getSimpleName()+"[" + methodInfo.method.getName() + "("+Arrays.toString(args)+")]");
+            methodInfo.method.invoke(o, args);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
